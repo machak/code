@@ -1,0 +1,155 @@
+Index: repository-data/application/src/main/resources/hcm-config/configuration/domains/brokenlinks.yaml
+===================================================================
+--- repository-data/application/src/main/resources/hcm-config/configuration/domains/brokenlinks.yaml	(revision 3617e315d897700edea1004ff91db33782efd884)
++++ repository-data/application/src/main/resources/hcm-config/configuration/domains/brokenlinks.yaml	(revision 3617e315d897700edea1004ff91db33782efd884)
+@@ -1,4 +0,0 @@
+-definitions:
+-  config:
+-    /hippo:configuration/hippo:domains/brokenlinks/readonly:
+-      hipposys:groups: [author, editor, useradmin]
+Index: repository-data/application/src/main/resources/hcm-config/configuration/modules/scheduler.yaml
+===================================================================
+--- repository-data/application/src/main/resources/hcm-config/configuration/modules/scheduler.yaml	(revision 3617e315d897700edea1004ff91db33782efd884)
++++ repository-data/application/src/main/resources/hcm-config/configuration/modules/scheduler.yaml	(revision 3617e315d897700edea1004ff91db33782efd884)
+@@ -1,21 +0,0 @@
+-definitions:
+-  config:
+-    /hippo:configuration/hippo:modules/scheduler/hippo:moduleconfig/govscot:
+-      jcr:primaryType: hipposched:jobgroup
+-      /SitemapGenerator:
+-        jcr:primaryType: hipposched:repositoryjob
+-        hipposched:attributeNames: [baseURL]
+-        hipposched:attributeValues: ['https://www.gov.scot/']
+-        hipposched:enabled: true
+-        hipposched:repositoryJobClass: scot.gov.www.scheduledjobs.sitemap.SitemapGeneratorJob
+-        /hipposched:triggers:
+-          jcr:primaryType: hipposched:triggers
+-          /halfhour:
+-            jcr:primaryType: hipposched:crontrigger
+-            jcr:mixinTypes: ['hippo:lockable', 'mix:lockable']
+-            jcr:uuid: b58ae451-dc02-4b88-9b86-d41a09eda877
+-            hipposched:cronExpression: 0 0/30 * * * ?
+-            hipposched:enabled: true
+-            hipposched:nextFireTime: 2019-02-14T13:30:00Z
+-    /hippo:configuration/hippo:modules/scheduler/hippo:moduleconfig/system/CheckBrokenLinks/hipposched:triggers/nightly:
+-      hipposched:cronExpression: 0 0/5 * * * ?
+Index: repository-data/application/src/main/resources/hcm-config/hst/hosts.yaml
+===================================================================
+--- repository-data/application/src/main/resources/hcm-config/hst/hosts.yaml	(revision 3617e315d897700edea1004ff91db33782efd884)
++++ repository-data/application/src/main/resources/hcm-config/hst/hosts.yaml_	(date 1561058588000)
+@@ -464,7 +464,7 @@
+             jcr:primaryType: hst:virtualhost
+             /www:
+               jcr:primaryType: hst:virtualhost
+-                /hst:root:
++              /hst:root:
+                   jcr:primaryType: hst:mount
+                   hst:ismapped: false
+                   hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -481,7 +481,7 @@
+               jcr:primaryType: hst:virtualhost
+               /blu:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -498,7 +498,7 @@
+               jcr:primaryType: hst:virtualhost
+               /dev:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -515,7 +515,7 @@
+               jcr:primaryType: hst:virtualhost
+               /exp:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -532,7 +532,7 @@
+               jcr:primaryType: hst:virtualhost
+               /grn:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -549,7 +549,7 @@
+               jcr:primaryType: hst:virtualhost
+               /int:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -566,7 +566,7 @@
+               jcr:primaryType: hst:virtualhost
+               /lcl:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -583,7 +583,7 @@
+               jcr:primaryType: hst:virtualhost
+               /per:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -600,7 +600,7 @@
+               jcr:primaryType: hst:virtualhost
+               /tst:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+@@ -617,7 +617,7 @@
+               jcr:primaryType: hst:virtualhost
+               /uat:
+                 jcr:primaryType: hst:virtualhost
+-                  /hst:root:
++                /hst:root:
+                     jcr:primaryType: hst:mount
+                     hst:ismapped: false
+                     hst:namedpipeline: WebApplicationInvokingPipeline
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision 3617e315d897700edea1004ff91db33782efd884)
++++ pom.xml	(date 1561056938000)
+@@ -2,12 +2,14 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+ 
+-  <parent>
+-    <groupId>scot.mygov</groupId>
+-    <artifactId>mygov-parent</artifactId>
+-    <version>4</version>
++
++    <parent>
++    <groupId>com.onehippo.cms7</groupId>
++    <artifactId>hippo-cms7-enterprise-release</artifactId>
++    <version>13.0.2</version>
+   </parent>
+ 
++
+   <groupId>scot.gov.www</groupId>
+   <artifactId>gov-scot</artifactId>
+   <version>0.0.1-SNAPSHOT</version>
